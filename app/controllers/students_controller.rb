@@ -1,6 +1,11 @@
 class StudentsController < ApplicationController
 def new
 end
+
+def index 
+    @students = Student.all
+end
+
 def create
     # render plain: params[:student11].inspect
     @student12 = Student.new(student_params)
@@ -14,6 +19,6 @@ end
 
 private 
 def student_params
-    params.require(:student11).permit(:title,:text)
+    params.require(:student115).permit(:title,:text)
 end
 end

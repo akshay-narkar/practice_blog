@@ -1,0 +1,15 @@
+<h1>Listing all students</h1>
+<table>
+<tr>
+<th>Title</th>
+<th>Text</th>
+</tr>
+<% @students.each do |x| %>
+<tr>
+<td><%= x.title %></td>
+<td><%= truncate(x.text,length:75) %></td>
+<td><%= link_to 'Show', student_path(x) %></td>
+</tr>
+<% end %>
+<p><%= link_to 'Home Page', root_path%></p>
+</table>
