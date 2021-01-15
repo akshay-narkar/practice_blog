@@ -1,0 +1,16 @@
+<h1>Create a New fighter</h1>
+
+
+<%= form_for :fighters, url:fighter_path   do |x| %>
+<p>
+ <%= x.label :title %><br>
+ <%= x.text_field :title%>
+</p>
+<p>
+    <%= x.label :text %><br>
+    <%= x.text_area :text%>
+</p>
+<p>
+    <%= x.submit %>
+    </p>
+<% end %>
