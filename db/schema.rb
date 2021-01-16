@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_15_103121) do
+ActiveRecord::Schema.define(version: 2021_01_16_144543) do
+
+  create_table "comments", force: :cascade do |t|
+    t.string "commenter"
+    t.text "body"
+    t.integer "student_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["student_id"], name: "index_comments_on_student_id"
+  end
 
   create_table "students", force: :cascade do |t|
     t.string "title"
@@ -19,4 +28,5 @@ ActiveRecord::Schema.define(version: 2021_01_15_103121) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "comments", "students"
 end
